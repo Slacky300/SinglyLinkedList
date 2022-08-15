@@ -126,11 +126,76 @@ struct node * insertBefore(struct node *head,int value,int hold){
     
     
 }
+
+int count(){
+    int i = 0;
+    p = head;
+    while(p!=NULL){
+        i++;
+        p = p->next;
+    }
+    return i;
+}
+
+struct node * removeHead(struct node *head){
+    temp = head;
+    head = head->next;
+    free(temp);
+    return head;
+}
+
+void removeLast(){
+
+    p = head;
+    while(p->next->next!=NULL){
+        p = p->next;
+    }
+    temp =  p->next;
+    p->next = NULL;
+    free(temp);
+    
+   
+}
+
 void main(){
-    head = createList(head);
-    head = insertAfter(head,52,98);
-    head = addAtBeg(head,50);
-    head = insertAtIndex(head,3,89);
-    head = insertBefore(head,52,98);
-    display();
+    
+    // head = createList(head);
+    // head = insertAfter(head,52,98);
+    // head = addAtBeg(head,50);
+    // head = insertAtIndex(head,3,89);
+    // head = insertBefore(head,52,98);
+    // display();
+    // printf("\nNo. of nodes = %d \n",count());
+    // head = removeHead(head);
+    // display();
+    // printf("\nNo. of nodes = %d \n",count());
+    // removeLast();
+    // display();
+    // printf("\nNo. of nodes = %d \n",count());
+    int choice;
+    do{
+        printf("Enter the operation you want to perform\n");
+        printf("1.CreateList\n2.Insert\n3.Count\n4.Delete\n5.Exit\n");
+        scanf("%d",&choice);
+        if(choice == 1){
+            head = createList(head);
+        }else if(choice == 2){
+            int choice2,hold;
+            printf("Enter the position to inser\n");
+            printf("1.Starting\n2.Specific\n3.Last\n4.Before an element \n5.After an element\n6.Stop Inserting\n");
+            scanf("%d",&choice2);
+            if(choice2 == 1){
+                
+                printf("Enter the value\n");
+                scanf("%d",&hold);
+                head = addAtBeg(head,hold);
+            }else if(choice2==2){
+                
+                printf("Enter the position you want to add\n");
+                scanf("%d",)
+                head = insertAtIndex(head,3,89);
+            }
+        }
+    }
+
 }
