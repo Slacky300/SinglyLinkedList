@@ -10,15 +10,7 @@ struct node{
 
 
 
-void deleteSpecific(int value){
-    p = head;
-    while(p!=value){
-        p=p->next;
-    }
-    temp=p;
-    temp
-    
-}
+
 struct node * addAtEnd(struct node *head,int value){
 
 
@@ -177,6 +169,32 @@ void removeLast(){
     
    
 }
+void deleteSpecific(struct node *head,int value){
+    struct node *pTail;
+    
+    if(value == head->data){
+        printf("Choose remove First Node! (HEAD NODE)\n");
+        return;
+    }
+    pTail = head;
+    p = head;
+    
+    while(p->data!=value){
+        
+        p = p->next;
+        
+    }
+    while(pTail->next->data!=value){
+        pTail = pTail->next;
+    }
+    
+    pTail->next=p->next;
+    
+    free(p);
+    
+    
+    
+}
 
 void main(){
     
@@ -252,7 +270,7 @@ void main(){
                 }else if(choice3==2){
                     printf("Enter the value\n");
                     scanf("%d",&hold);
-                    deleteSpecific(hold);
+                    deleteSpecific(head,hold);
                     printf("Linked List:\n");
                     display();
                 }else if(choice3==3){
