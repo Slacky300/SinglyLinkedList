@@ -8,6 +8,9 @@ struct node{
 
 }*head = NULL,*p,*temp;
 
+
+
+void dele
 struct node * addAtEnd(struct node *head,int value){
 
 
@@ -196,14 +199,19 @@ void main(){
                 scanf("%d",&hold);
                 head = insertAtIndex(head,index,hold);
             }else if(choice2==3){
-                printf("In development\n"); 
-            }else if(choice==4){
+                printf("Enter the index and value respectively\n");
+                scanf("%d %d",&index,&hold);
+                head = insertAtIndex(head,index,hold);
+                printf("Linked list: \n");
+                display();
+            }else if(choice2==4){
                 display();
                 printf("Enter the value\n");
                 scanf("%d",&hold);
                 printf("Enter the element\n");
                 scanf("%d",&index);
                 head = insertBefore(head,index,hold);
+                printf("Linked list: \n");
                 display();
             }else if(choice2 == 5){
                 display();
@@ -212,6 +220,7 @@ void main(){
                 printf("Enter the element\n");
                 scanf("%d",&index);
                 head = insertAfter(head,index,hold);
+                printf("Linked list: \n");
                 display();
                 
             }else if(choice2==6){
@@ -230,11 +239,13 @@ void main(){
                 scanf("%d",&choice3);
                 if(choice3==1){
                     head = removeHead(head);
+                    printf("Linked List:\n");
                     display();
                 }else if(choice3==2){
                     printf("In development\n");
                 }else if(choice3==3){
                     removeLast();
+                    printf("Linked List:\n");
                     display();
                 }else if(choice3==4){
                     break;
@@ -244,10 +255,13 @@ void main(){
                 
             }while(choice3!=4);
         }else if(choice==5){
+            printf("Linked List:\n");
+            display();
+        }else if(choice==6){
             break;
         }else{
             printf("Invalid input\n");
         }
-    }while(choice!=5);
+    }while(choice!=6);
         printf("End\n");
 }
