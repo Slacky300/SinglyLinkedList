@@ -209,9 +209,9 @@ void main(){
         }else if(choice == 2){
             do{
                 int hold,index;
-            printf("Enter the position to insert\n");
-            printf("1.Starting\n2.Specific\n3.Last\n4.Before an element \n5.After an element\n6.Stop Inserting\n");
-            scanf("%d",&choice2);
+                printf("Enter the position to insert\n");
+                printf("1.Starting\n2.Specific\n3.Last\n4.Before an element \n5.After an element\n6.Stop Inserting\n");
+                scanf("%d",&choice2);
             if(choice2 == 1){
                 
                 printf("Enter the value\n");
@@ -293,5 +293,6 @@ void main(){
             printf("Invalid input\n");
         }
     }while(choice!=6);
-        printf("End\n");
+        printf("End of linked list operations\nFinal Linked List: ");
+        display();
 }
