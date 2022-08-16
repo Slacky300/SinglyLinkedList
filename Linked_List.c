@@ -10,7 +10,15 @@ struct node{
 
 
 
-void dele
+void deleteSpecific(int value){
+    p = head;
+    while(p!=value){
+        p=p->next;
+    }
+    temp=p;
+    temp
+    
+}
 struct node * addAtEnd(struct node *head,int value){
 
 
@@ -242,7 +250,11 @@ void main(){
                     printf("Linked List:\n");
                     display();
                 }else if(choice3==2){
-                    printf("In development\n");
+                    printf("Enter the value\n");
+                    scanf("%d",&hold);
+                    deleteSpecific(hold);
+                    printf("Linked List:\n");
+                    display();
                 }else if(choice3==3){
                     removeLast();
                     printf("Linked List:\n");
